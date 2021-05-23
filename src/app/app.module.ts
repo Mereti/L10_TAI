@@ -46,7 +46,8 @@ import { SelectizeComponent } from './components/selectize/selectize.component';
     FormsModule
   ],
   providers: [
-    DataService
+    DataService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
