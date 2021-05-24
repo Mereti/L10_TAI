@@ -43,11 +43,19 @@ import { SelectizeComponent } from './components/selectize/selectize.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
-    DataService,
-    AuthService
+
+     DataService,
+     AuthService,
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+      },
+
   ],
   bootstrap: [AppComponent]
 })
